@@ -1,0 +1,96 @@
+# For more details, see gameoptions_example.yaml in Content\Scenarios\Default Random
+Options:
+  - ValidFor: [ SP, Survival ]
+    DecayTime: 0
+    WipeTime: 0
+    ProtectTime: 0
+    ProtectDelay: 0
+    MaxStructures: 255
+    AntiGriefDistancePvE: 0
+    AntiGriefDistancePvP: 0
+    AntiGriefOresDistance: 0   
+    # AntiGriefOresZone: PvE      
+    EnableTrading: Player2System   
+    EnableMaxBlockCount: False
+    # EnableVolumeWeight: False         # default value
+    # EnableCPUPoints: False            # default value
+    # AutoMinerDepletion: True          # default value
+    GroundedStructureSpawn: False
+    # TurretUndergroundCheck: False     # default value
+    # OriginDefault: Neutral            # default value
+    # OriginAccessOthers: True          # default value
+    # OriginAutoAlliance: True          # default value
+    # FriendlyFireInPvP: True           # default value
+    # MaxSpawnedEnemies: 60             # default value
+    # DespawnEscapePod: False           # default value
+    # RegeneratePOIs: False             # default value
+    # FOWTransparency: 0                # default value
+    # DSLUnloadSecs: 30                 # default value
+    # DSLDistancePlanet: 1200           # default value
+    # DSLDistanceSpace: 3000            # default value
+    # ForcePvP: false                   # default value
+    # OriginFactionStart: false         # default value
+
+    ### In local Coop, following parameter are ignored since they are taken from Difficulty Settings window ###
+    # FriendlyFireInPvP: True           # default value
+    # DiffEscapePodContent: Medium      # default value
+    # DiffPlayerProgression: Normal     # default value
+    DiffDegradationSpeed: Low      # default value
+    DiffFoodConsumption: Low       # default value
+    DiffOxygenConsumption: Low     # default value
+    # DiffRadiationTemperature: Normal  # default value
+    DiffAmountOfOre: Rich           # default value
+    DiffNumberOfDeposits: Plenty      # default value
+    # DiffAttackStrength: Medium        # default value
+    # DiffEnemySpawnRate: Normal        # default value
+    # DiffDronePresence: Normal         # default value
+    # DiffDroneBaseAttack: Medium       # default value
+    DiffConstrCraftTime: Instant       # default value
+    DiffBpProdTime: Instant            # default value    
+
+  - ValidFor: [ MP, Survival ]
+    # DecayTime: 24                     # default value
+    WipeTime: 720 
+    ProtectTime: 24
+    ProtectDelay: 1800
+    MaxStructures: 500  
+    # AntiGriefDistancePvE: 30          # default value
+    # AntiGriefDistancePvP: 300         # default value
+    # AntiGriefOresDistance: 30         # default value
+    # AntiGriefOresZone: PvE            # default value  
+    # EnableTrading: All                # default value
+    # EnableMaxBlockCount: True         # default value
+    # EnableVolumeWeight: False         # default value
+    # EnableCPUPoints: False            # default value
+    AutoMinerDepletion: False    
+    # GroundedStructureSpawn: True      # default value
+    TurretUndergroundCheck: True   
+    # OriginDefault: Neutral            # default value
+    # OriginAccessOthers: True          # default value
+    # OriginAutoAlliance: True          # default value
+    # MaxSpawnedEnemies: 60             # default value
+    DespawnEscapePod: True 
+    RegeneratePOIs: True               
+    # FOWTransparency: 0                # default value
+    # DSLUnloadSecs: 30                 # default value
+    # DSLDistancePlanet: 1200           # default value
+    # DSLDistanceSpace: 3000            # default value
+    # ForcePvP: false                   # default value
+    # OriginFactionStart: false         # default value
+
+    ### In local Coop, following parameter are ignored since they are taken from Difficulty Settings window ###
+    # FriendlyFireInPvP: True           # default value
+    # DiffEscapePodContent: Medium      # default value
+    # DiffPlayerProgression: Normal     # default value
+    DiffDegradationSpeed: Low      # default value
+    DiffFoodConsumption: Low       # default value
+    DiffOxygenConsumption: Low     # default value
+    # DiffRadiationTemperature: Normal  # default value
+    DiffAmountOfOre: Rich           # default value
+    DiffNumberOfDeposits: Plenty      # default value
+    # DiffAttackStrength: Medium        # default value
+    # DiffEnemySpawnRate: Normal        # default value
+    # DiffDronePresence: Normal         # default value
+    # DiffDroneBaseAttack: Medium       # default value
+    DiffConstrCraftTime: Instant       # default value
+    DiffBpProdTime: Instant            # default value

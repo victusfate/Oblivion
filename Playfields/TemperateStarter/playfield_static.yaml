@@ -1,0 +1,1290 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+Description: "Difficulty:[c][FFFFFF] Easy[-][/c]    Origin:[c][FFFFFF] %Origin%[-][/c]
+
+
+ A temperate planet with lakes, vast plains and mountain ranges. The climate is moderate and it has a breathable atmosphere. 
+
+
+  Start: [c][FFFFFF]Escape Pod[-][/c]"
+
+PlanetType: Temperate
+PlayfieldType: Planet
+Difficulty: 2
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.19, 0.26, 0.35" 
+SkyColor: "1, 1, 1" 
+SkyHorizonColor: "1, 0.5, 0"
+
+# Light
+DayLightIntensity: 1.4
+NightLightIntensity: 0.55
+NightLightColor: "0.78, 0.78, 1"
+
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Fog
+# AtmosphereFog: 0.35
+FogCloudIntensity: 0.8
+# GroundFogIntensity: 0
+# GroundFogHeight: 0
+
+# Clouds and Wind
+CloudsDensity: 0.3
+CloudsSharpness: 0.35
+CloudsBrightness: 0.7
+CloudsOpacity: 0.7
+CloudsZenithColor: "0.89, 0.92, 1"
+CloudsHorizonColor: "1, 0.3, 0.1"
+WindSpeed: 3
+
+# Special Effects 
+SpecialEffectsLocal:
+  - Name: DandelionsFew
+    Biome: [ Crashsite, Grassland, ColdPlains ]
+    Time: Day
+    MaxHeight: 10
+  - Name: ButterfliesFew
+    Biome: [ Crashsite, Grassland, Oasis ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Pollen
+    Biome: [ Savanna, SavannaEdge, DustBowl ]  
+    Time: Day
+    MaxHeight: 10
+  - Name: Mosquitos
+    Biome: [ Savanna, SavannaEdge, DustBowl, Marsh, Swamp, WaterSwamp, Water ]  
+    Time: Day
+    MaxHeight: 15
+  - Name: ButterfliesBlue
+    Biome: [ Forest, Marsh ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Dragonflies
+    Biome: [ Marsh, Swamp, WaterSwamp, Water, ShallowWater ]
+    Time: Day
+    MaxHeight: 15
+  - Name: FireFliesOrange
+    Biome: [ Forest, DeepForest, Peaks, Marsh, Swamp, WaterSwamp, Oasis ]
+    Time: Night
+    MaxHeight: 15
+  - Name: Moths
+    Biome: [ DeepForest, Savanna, SavannaEdge, Grassland, Crashsite ]
+    Time: Night
+    MaxHeight: 15
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 12
+    Delay: 2
+    Lifetime: 1200
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 24
+    Delay: 5
+    Lifetime: 1000
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 1000
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 600
+  - Name: RainMedium
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 600
+  - Name: RainHeavy
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 600
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 600
+  - Name: FogRadiationGreen
+    Type: Weather
+    InitialDelay: 96
+    Delay: 24
+    Lifetime: 600
+# Global Effect
+  - Name: BirdFlocksCrows
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 1
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 100
+    SpawnY: 30
+    Struct: True
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: IronResource
+      Biome: [ Grassland, ColdPlains, Sand ]
+      CountMinMax: [ 15, 20 ]
+      SizeMinMax: [ 7, 10 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+
+    - Name: CopperResource
+      Biome: [ Forest, Oasis, Marsh, Swamp, WaterSwamp ]
+      CountMinMax: [ 8, 10 ]
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.3
+
+    - Name: SiliconResource
+      Biome: [ Savanna, SavannaEdge, Tundra, Sand ]
+      CountMinMax: [ 8, 15 ]
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.3
+
+    - Name: PromethiumResource
+      Biome: [ Mountains, LowMountains ]
+      CountMinMax: [ 5, 8 ]
+      SizeMinMax: [ 4, 5 ]
+      DepthMinMax: [ 0, 1 ]
+      DroneProb: 0.8
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: PromethiumResource
+      Biome: [ Radiated, RadiatedFog ]
+      IsImportant: True
+      CountMinMax: [ 8, 12 ]
+      SizeMinMax: [ 6, 8 ]
+      DepthMinMax: [ 0, 1 ] 
+      DroneProb: 0.8
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: NeodymiumResource
+      Biome: [ Radiated, RadiatedFog ]
+      IsImportant: True
+      CountMinMax: [ 8, 12 ]
+      SizeMinMax: [ 6, 8 ]
+      DepthMinMax: [ 0, 1 ] 
+      DroneProb: 0.8
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: MagnesiumResource
+      Biome: [ Mountains, LowMountains ]
+      CountMinMax: [ 5, 8 ]
+      SizeMinMax: [ 4, 5 ]
+      DepthMinMax: [ 0, 1 ]
+      DroneProb: 0.8
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+
+### Resource Asteroids
+AsteroidResources:
+    - Name: IronResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10       
+    - Name: CopperResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10       
+    - Name: SiliconResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10       
+    - Name: PromethiumResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10       
+    - Name: CobaltResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10
+    - Name: NeodymiumResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10
+    - Name: MagnesiumResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10
+    - Name: SathiumResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10
+    - Name: ErestrumResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10
+    - Name: ZascosiumResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10
+    - Name: PentaxidResource
+      Amount: 5000
+      InitialDelay: 0
+      Delay: 10
+      DespawnDelay: 10
+
+### POIs
+POIs:
+    Random:
+        - GroupName: DroneBaseT1
+          Faction: Zirax
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 1, 1 ]     
+          IsImportant: True
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ] 
+          ReserveCount: 5   
+          Properties: 
+            - Key: Music
+              Value: moonstone 
+            - Key: RegenAfter
+              Value: 720       
+
+       # ======================= TRADING STATION ======================= 
+        # Trading Station with some settlements
+        - GroupName: TS_Planet
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOIAvoid: [DroneBaseT1]  
+          SpawnPOIAvoidDistance: 2000  
+          Properties: 
+            - Key: Music
+              Value: SunnySkies      
+
+        - GroupName: CivilSettlementO2
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [TS_Planet]
+          SpawnPOINearRange: [100, 250] 
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720       
+
+        - GroupName: PolarisDefence
+          Faction: Polaris  
+          # Territory: False        
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 5, 6 ]
+          SpawnPOINear: [TS_Planet]
+          SpawnPOINearRange: [300, 500] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+         
+       # ======================= MAIN TALON SETTLEMENT ======================= 
+        - GroupName: RuinsTribalTower
+          Faction: Talon  
+          Biome: [ DeepForest, Forest, Marsh, Swamp ]
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 4000
+          SpawnResource: ["IronResource:1-1","SiliconResource:1-1","CopperResource:1-1"]
+          SpawnResourceRange: [150,400]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalVillage 
+          Faction: Talon  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [RuinsTribalTower]
+          SpawnPOINearRange: [200, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalField
+          Faction: Talon
+          Territory: False         
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 4, 5 ]
+          IsImportant: True
+          SpawnPOINear: [RuinsTribalTower]
+          SpawnPOINearRange: [30, 80]
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: RuinsTribal
+          Faction: Talon  
+          # Territory: False         
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [RuinsTribalTower]
+          SpawnPOINearRange: [200, 500]
+          Properties:
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+       # ======================= ZIRAX - SETTLEMENT IN RADIATED BIOME 
+          # Endboss Main  - Floating
+        - GroupName: XenuMainframe 
+          Faction: Zirax  
+          Biome: [ RadiatedFog ]
+          IsImportant: True
+          LevelMod: +3
+          CountMinMax: [ 1, 1 ]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+          # Endboss Main
+        - GroupName: XenuRadarMain                       # Main Building
+          Faction: Zirax  
+          Biome: [ RadiatedFog ]
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +2
+          DroneProb: 0.9
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 3
+          TroopTransport: True
+          Properties: 
+            - Key: MapDistance
+              Value: 800
+            - Key: RegenAfter
+              Value: 720
+
+          # Endboss  Teleporter Access
+        - GroupName: XenuRadarAddition
+          Faction: Zirax  
+          Biome: [ RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +1
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOINear: [XenuRadarMain]
+          SpawnPOINearRange: [300, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+              
+          # Endboss Main Defense Turrets
+
+          # Anti-Aircraft turret
+        - GroupName: XenuRadarTurretRocket
+          Faction: Zirax  
+          # IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [XenuRadarMain]
+          SpawnPOINearRange: [150, 200] 
+          SpawnPOIAvoid: [XenuRadarAddition]  
+          POIDistance: 500
+          Properties: 
+            - Key: MapDistance
+              Value: 800
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: XenuRadarTurret
+          Faction: Zirax  
+          # IsImportant: True
+          CountMinMax: [ 2, 2 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [XenuRadarMain]
+          SpawnPOINearRange: [100, 350] 
+          Properties: 
+            - Key: MapDistance
+              Value: 800
+            - Key: RegenAfter
+              Value: 720
+         
+       # ======================= POLARIS SETTLEMENT ======================= 
+        # Mining Station
+        - GroupName: PolarisIndustrialMain                      # Main Building
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [3000, 5000] 
+          SpawnResource: ["SiliconResource:1-2","PromethiumResource:2-2"]
+          SpawnResourceRange: [150,300]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisLogisticsMain
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [PolarisIndustrialMain]
+          SpawnPOINearRange: [150, 300] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisIndustrialAux
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [PolarisIndustrialMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: CivilSettlement
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisLogisticsAux
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: PolarisDefence
+          Faction: Polaris  
+          # Territory: False        
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 5, 6 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [300, 500] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+
+       # ======================= TALON SETTLEMENT ======================= 
+        - GroupName: TribalBazar                      # Main Building
+          Faction: Talon  
+          Biome: [ DeepForest, Forest, Marsh, Swamp ]
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 6000
+          SpawnResource: ["IronResource:1-1","SiliconResource:1-1","CopperResource:1-1"]
+          SpawnResourceRange: [150,400]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalBazarAux
+          Faction: Talon  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [TribalBazar]
+          SpawnPOINearRange: [100, 300]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalRecreation
+          Faction: Talon  
+          Territory: False  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [TribalBazar]
+          SpawnPOINearRange: [80, 200]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalField
+          Faction: Talon
+          Territory: False         
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 5, 6 ]
+          SpawnPOINear: [TribalBazar]
+          SpawnPOINearRange: [30, 120]
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+       # ======================= POLARIS SETTLEMENT ======================= 
+        - GroupName: PolarisMiningMain          # Main Building
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 6000
+          SpawnResource: ["SiliconResource:1-2","PromethiumResource:2-2"]
+          SpawnResourceRange: [150,400]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisMiningAux
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisIndustrialAux
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [200, 400] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: CivilSettlement
+          Faction: Polaris  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [PolarisIndustrialAux]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: PolarisDefence
+          Faction: Polaris  
+          # Territory: False        
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          CountMinMax: [ 5, 6 ]
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [300, 500] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720
+       # # =================TALON VILLAGES SCATTERED AROUND PLANET ===============
+        - GroupName: TribalVillageStone 
+          Faction: Talon  
+          Biome: [ Savanna, SavannaEdge, Tundra, ColdPlains ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0 
+          DronesMinMax: [ 0, 0 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          # AuxiliaryPOIs: [TribalBazarStone, TribalField]
+          SpawnResource: ["IronResource:1-1","SiliconResource:1-1","CopperResource:1-1"]
+          SpawnResourceRange: [150,400]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalBazarStone
+          Faction: Talon  
+          Biome: [ DeepForest, Forest, Marsh, Swamp ]
+          IsImportant: True
+          IsAuxPOI: True
+          SpawnPOINear: [TribalVillageStone]
+          SpawnPOINearRange: [50, 100]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0 
+          DronesMinMax: [ 0, 0 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalField
+          Faction: Talon
+          Territory: False         
+          Biome: [ DeepForest, Forest, Marsh, Swamp ]
+          IsAuxPOI: True
+          SpawnPOINear: [TribalVillageStone]
+          SpawnPOINearRange: [50, 100]
+          CountMinMax: [ 4, 5 ]
+          DroneProb: 0
+          DronesMinMax: [ 0 ]
+          ReserveCount: 0
+          TroopTransport: False    
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+
+       # ================================
+        - GroupName: XenuShrine 
+          Faction: Zirax  
+          Biome: [ Grassland, ColdPlains, Forest ]
+          # Biome: [ DeepWater, Water, ShallowWater ]
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 3000
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+        - GroupName: AbandonedPOI
+          Faction: Alien  
+          Biome: [ Forest ]
+          CountMinMax: [ 4, 6 ]
+          DroneProb: 0.1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 4000
+          SpawnResource: ["IronResource:1-1","PromethiumResource:0-1","CopperResource:1-1"]
+          SpawnResourceRange: [250,400]
+          Properties: 
+            - Key: Music
+              Value: DarkSoundscape
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+ 
+       # Alien Artifacts - Floating
+        - GroupName: ArtifactsFloating
+          Faction: Alien  
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: OnWater
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 3000
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: Music
+              Value: EvilWhispering
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+        
+        - GroupName: Ruins
+          Faction: None  
+          Biome: [ DeepForest, Marsh, Swamp, Forest ]
+          CountMinMax: [ 4, 6 ]
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 4000
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: RuinsTribal
+          Faction: None  
+          Biome: [ DeepForest, Marsh, Swamp, Forest ]
+          CountMinMax: [ 3, 5 ]
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 4000
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedShip     # no core 
+          Faction: None
+          # IsScalingCount: True              # scales with planet size
+          CountMinMax: [ 3, 4 ]
+          PlaceAt: UnderWater
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 2000
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedShip     # no core 
+          Faction: None
+          # IsScalingCount: True              # scales with planet size
+          CountMinMax: [ 3, 4 ]
+          # PlaceAt: UnderWater
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 2000
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Artifacts
+          Faction: Alien            
+          Biome: [ WaterSwamp, Swamp, Forest ]
+          CountMinMax: [ 4, 6 ]
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 2000
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: Music
+              Value: EvilWhispering
+            - Key: RegenAfter
+              Value: 720
+       # ======================= ZIRAX - MAIN SETTLEMENT - DRONE BASE ======================= 
+       # Military Xenu Compound
+       # Main Building
+        - GroupName: XenuMain                            # Main Building
+          Faction: Zirax  
+          BiomesExcluded: [ Radiated, RadiatedFog ] 
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          LevelMod: +2
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [150, 250]
+          SpawnResource: ["IronResource:1-2","PromethiumResource:1-2","SiliconResource:1-1"]
+          SpawnResourceRange: [150,400]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # Auxiliary Buildings
+        - GroupName: XenuAuxT2
+          Faction: Zirax  
+          BiomesExcluded: [ Radiated, RadiatedFog ] 
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +1
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [XenuMain]
+          SpawnPOINearRange: [150, 250]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # Defence Buildings
+        - GroupName: XenuDefenceT2
+          Faction: Zirax  
+          Territory: False        
+          BiomesExcluded: [ Radiated, RadiatedFog ] 
+          CountMinMax: [ 2, 2 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [300, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+       # Military Xenu Large Bunker
+        - GroupName: XenuBunker                             # Main Building
+          Faction: Zirax  
+          BiomesExcluded: [ Mountains, LowMountains ]
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          LevelMod: +1
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 5000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: XenuAuxT2
+          Faction: Zirax  
+          Territory: False        
+          CountMinMax: [ 2, 2 ]
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [XenuBunker]
+          SpawnPOINearRange: [150, 300]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+       # Military Xenu Outposts scattered around planet 
+        - GroupName: XenuAuxT1
+          Faction: Zirax  
+          Biome: [ Savanna, SavannaEdge, Grassland, Forest, DeepForest, Marsh, WaterSwamp ]
+          # BiomesExcluded: [ Radiated, RadiatedFog ] 
+          CountMinMax: [ 8, 10 ]
+          DroneProb: 1
+          DronesMinMax: [ 3, 4 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          # SpawnPOIAvoid: [START]
+          # SpawnPOIAvoidDistance: 2000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+       # ================================
+       # Wreckage and Human Ruins 
+        - GroupName: Wreckage
+          Faction: None  
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 6, 8 ]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+    # FixedPlayerStart:
+    #     - Mode: Survival
+    #       Spawn: Structure
+    #       Structure: DungeonSpace         
+    #       Items: ['Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000,ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999, 8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000',
+    #       'Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000, ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999,  8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000',
+    #       'Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000, ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999,  8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000',
+    #       '#FreshStart:Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000, ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999,  8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000'] 
+    #       Armor: ArmorHeavy
+# ==============================================================
+# ==============================================================
+### Drones
+DroneBaseSetup: 
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 5
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: Crawler
+                Amount: 150
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 300
+                Extra: 3
+   
+
+
+# Drones that patrol on whole planet 
+# Type determined by stock of drone base (default drone - type = 0)
+DroneSpawning:    
+    Random:
+        - DronesMinMax: [ 10, 10 ]
+          CenterX: -5000
+
+        - DronesMinMax: [ 10, 10 ]
+          CenterX: 5000
+
+# ==============================================================
+# ==============================================================
+
+# SpawnRateZones:
+   # - SpawnAt: [START]
+     # Radius: 400
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 0
+     # RateMultiplyerEdge: 0
+     # AffectEnemies: true
+     # # AffectFriendly: true
+     # Color: "0.0, 1.0, 0.0, 0.7" 
+      
+SpawnZones:
+   - SpawnAt: [Space Hulk]
+     BiomesExcluded: []
+     Radius: 500
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [TotalHorrors, AlienAssassinGreys, ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [Artifacts, AbandonedPOI]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 500
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienBugs03, Spiders01]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [CrashedShip, PromethiumResource, Ruins] 
+     BiomesExcluded: [ LowMountains, Mountains, RadiatedFog ]   # if Promethium spawns in RadiatedFog no need for extra defence         
+     Radius: 500
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Spiders01]
+         Biomes: [Any]
+         Amount: 180
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [RuinsTribalTower, TribalBazar, TribalVillageStone ]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 1200
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [TalonGuardianHerd]
+         Biomes: [Any]
+         Amount: 250
+         Period: Always
+         DelayMinMax: [200, 240]
+       - Names: [LizardMuleHerd]
+         Biomes: [Any]
+         Amount: 100
+         Period: Always
+         DelayMinMax: [200, 240]
+   - SpawnAt: [DroneBaseT1, XenuRadarMain, XenuBunker]    # Main Xenu Buildings
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 1200
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 300
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [XenuAuxT1]    # Outposts
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 1000
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+### Creatures
+CreatureSpawning:
+    - Biomes: [Grassland]
+      Entities:
+        - Name: Spiders01
+          Period: Day
+          Amount: 5
+          Color: "1.0, 0, 0"
+          DelayMinMax: [20, 24]
+        - Name: Spiders01
+          Period: Night
+          Amount: 10
+          Color: "1.0, 0, 0"
+          DelayMinMax: [20, 24]
+        - Name: Parasaurs
+          Period: Always
+          Amount: 17
+          DelayMinMax: [6, 8]
+          Color: "0, 0, 1.0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 20
+          DelayMinMax: [6, 8]
+          Color: "0, 1.0, 1.0"
+        - Name: Pangolins
+          Period: Day
+          Amount: 10
+          DelayMinMax: [8, 12]
+          Color: "1, 1, 1"
+    - Biomes: [Forest, DeepForest, Marsh]
+      Entities:
+        - Name: AlienBugs01
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+        - Name: Spiders01
+          Period: Day
+          Amount: 15
+          Color: "1.0, 0, 0"
+          DelayMinMax: [20, 24]
+        - Name: AlienBugs03
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.7, 0, 0"
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+        - Name: Triceratopses
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0, 0.5, 1.0"
+        - Name: TalonGuardianHerd
+          Period: Always
+          Amount: 5
+          DelayMinMax: [8, 10]
+          Color: "0.2, 1.0, 0"
+    - Biomes: [Savanna, SavannaEdge]
+      Entities:
+        - Name: RaptorHerd
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+        - Name: AlienBugs04
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+        - Name: Pangolins
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0, 0.5, 1.0"
+    - Biomes: [ShallowWater, WaterSwamp]
+      Entities:
+        - Name: Telluropods
+          Period: Always
+          Amount: 25
+          DelayMinMax: [10, 12]
+          AllowInWater: true
+    - Biomes: [Swamp, WaterSwamp, Beach]
+      Entities:
+        - Name: Slimes
+          Period: Day
+          Amount: 12
+          DelayMinMax: [10, 12]
+        - Name: Creepys
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 12
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+        - Name: LizardMuleHerd
+          Period: Always
+          Amount: 15
+          DelayMinMax : [6, 8]
+    - Biomes: [DustBowl]
+      Entities:
+        - Name: Spiders01
+          Period: Always
+          Amount: 15
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+    - Biomes: [LowMountains]
+      Entities:
+        - Name: Spiders01
+          Period: Always
+          Amount: 8
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+        - Name: RaptorHerd
+          Period: Day
+          Amount: 12
+          DelayMinMax: [10, 12]
+    - Biomes: [Tundra, ColdPlains]
+      Entities:
+        - Name: Parasaurs
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 8
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+        - Name: Triceratopses
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+    - Biomes: [PolarSnow]
+      Entities:
+        - Name: SlimesWhite
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+          Color: "1.0, 1.0, 0"
+        - Name: CaveWormWhiteHerd
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: GolemsIce
+          Period: Day
+          Amount: 3
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+    - Biomes: [Radiated, RadiatedFog]
+      Entities:
+        - Name: AlienAssassinGreys
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0, 0, 0"
+        - Name: AlienBugs03
+          Period: Day
+          Amount: 12
+          DelayMinMax: [20, 24]
+          Color: "0, 0, 0"
+    - Biomes: [Sand]
+      Entities:
+        - Name: Pangolins
+          Period: Day
+          Amount: 12
+          DelayMinMax: [10, 12]
+          Color: "0, 0.5, 1.0"
+        - Name: AlienBugs04
+          Period: Always
+          Amount: 10
+          DelayMinMax: [20, 24]
+
