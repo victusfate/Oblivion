@@ -77,7 +77,7 @@ GenerationParams:
         Color: [0.04, 0.8, 0.1]
         Icon: Circle
         Distance: [300, 500]
-        PlayerStart: false
+        PlayerStart: true
         OrbitType: [OrbitStarter]         
         MoonProb: 1
         MoonType: [MoonStarter]       
@@ -89,7 +89,8 @@ GenerationParams:
         Color: [0.04, 0.8, 0.1]
         Icon: Circle
         Distance: [400, 850]
-        # PlayerStart: false
+        HasOrbit: true
+        PlayerStart: true
         # Neighbor 'Name, Probability [0..1]' 
         Neighbor: 
           - Snow, 1
@@ -237,7 +238,6 @@ GenerationParams:
         Color: [0.3, 0.3, 0.3]
         Icon: Rhombus
         Distance: [270, 870]
-        PlayerStart: true
         HasOrbit: false
         HasTerrain: false
         PlayfieldLevel: [1,1]
