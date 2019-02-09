@@ -1,0 +1,171 @@
+---
+# Space Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html 
+
+# Playfield Characteristics
+Gravity: 0.00
+AtmosphereEnabled: False
+PvP: False
+UseFixed: True
+Radiation: 2.2
+TemperatureDay: -113
+Music: DistantWorlds
+
+# Playfield difficulty (has impact on experience gains)
+Difficulty: 2
+
+PlayfieldType: Space
+PlanetType: Space
+
+Description: "Difficulty:[c][FFFFFF] Easy[-][/c] Origin:[c][FFFFFF] %Origin%[-][/c] You float out among the stars you're only hope a nearby derelict ship.."
+
+SunFlare: EnvironmentalEffects/SunFlareRedSpace
+Stars: SkyboxStarsRed
+Nebula: PrefabNebulaBluePinkRed
+
+
+### POIs
+POIs:
+    Fixed:
+        - Type: BA_Alien
+          Prefab: BAO_DerelictMiningShip
+          Mode: Survival
+          Name: BAO_DerelictMiningShip
+          Pos: [ 65, -2000, -7300 ]
+          Rot: [0,0,0]
+
+        - Type: BA_Admin
+          Prefab: TSO_OscutuneOrbit
+          Mode: Survival
+          Name: TSO Trading Outpost
+          Pos: [3517, -637, 1077]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Silicon
+          Prefab: AsteroidVoxel02Silicon
+          Name: Silicon Asteroid
+          Pos: [2852, 197, 4662]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel01Silicon
+          Prefab: AsteroidVoxel01Silicon
+          Name: Silicon Asteroid
+          Pos: [-3468, 548, 2444]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Silicon
+          Prefab: AsteroidVoxel02Silicon
+          Name: Silicon Asteroid
+          Pos: [-191, -128, -4555]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Magnesium
+          Prefab: AsteroidVoxel02Magnesium
+          Name: Magnesium Asteroid
+          Pos: [322, 337, 4218]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Erestrum
+          Prefab: AsteroidVoxel02Erestrum
+          Name: Erestrum Asteroid
+          Pos: [-4367, -414, 2754]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Erestrum
+          Prefab: AsteroidVoxel02Erestrum
+          Name: Erestrum Asteroid
+          Pos: [4459, 305, -1527]
+          Rot: [0, 0, 0]
+
+
+    FixedPlayerStart:
+        - Mode: Survival
+          Spawn: Structure
+          Structure: BAO_DerelictMiningShip         
+          Items: ['Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000,ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999, 8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000',
+          'Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000, ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999,  8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000',
+          'Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000, ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999,  8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000',
+          '#FreshStart:Medikit01:10, Medikit02:10, Medikit03:10, Medikit04:10, DrillCharge:100, MultiCharge: 100, AutoMinerT3:20, EmergencyRations:20, MinigunEpic, PlayerBike, ArmorLight, ArmorLocker, ConstructorSurvival, SurvivalTent, MobileAirCon, Flashlight, OreScanner, Chainsaw, DrillT2, MultiToolT2, Core:10, OxygenBottleLarge:20, Bandages:10, AntibioticOintment:5, StomachPills:5, EnergyDrink:20, MagnesiumIngot:1000, ZascosiumIngot:1000, ErestrumIngot:1000, IronIngot:4000, CopperIngot:4000, SiliconIngot:4000, SathiumIngot:4000, NeodymiumIngot:4000, CobaltIngot:4000, PlasticMaterial:4000, StoneDust: 1000, WoodLogs:800, BioFuel:100, FusionCell: 999,  8.3mmBullet:2000, ScifiCannonEpic, SciFiCannonPlasmaCharge:1000'] 
+          Armor: ArmorHeavy            
+
+# Drones
+DroneBaseSetup:
+    Fixed:
+        - Name: MainDroneBase
+          Pos: [1083, 660, -39]
+          DroneOnDuty:
+            - Name: SpaceDroneLaser
+              Pos: [5735, 611, -700]
+              Radius: 400
+            - Name: SpaceDroneLaser
+              Pos: [3009, 1716, 2177]
+              Radius: 348
+          SpaceVessel:
+            - Name: Freighter
+              FixedMaxSpeed: 23
+              Mission: Freighter
+              Freighter:
+                DelayBetweenRespawn: 523
+                PathWayPoint:
+                - [-1649, -68, -5087]
+                - [-2569, -745, -7424]
+                - [-3261, 229, -2825]
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 3
+                  Extra: 2
+            - Name: Freighter
+              FixedMaxSpeed: 24
+              Mission: Freighter
+              Freighter:
+                DelayBetweenRespawn: 503
+                PathWayPoint:
+                - [2555, 548, 3145]
+                - [-3731, 227, 4161]
+                - [3038, 227, 1670]
+                - [174, -1181, -7226]
+                - [-1523, -1784, -3891]
+                - [-1406, 1726, 1738]
+                - [1324, -1462, -2394]
+              Stock:
+                - Name: SpaceDroneLaser
+                  Amount: 3
+                  Extra: 1
+            - Name: Carrier
+              FixedMaxSpeed: 24
+              Mission: SpacePatrol
+              RangePatrol:
+                Position3D: [406, -2065, 477]
+                Radius: 1270
+                DistToGround: 0
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 3
+                  Extra: 1
+            - Name: BAO_Thermica-Station
+              FixedMaxSpeed: 20
+              Mission: Immobile
+              Immobile:
+                Position3D: [-3341, -456, 2394]
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 18
+                  Extra: 1
+            - Name: BAO_GhostRiderShipyard
+              FixedMaxSpeed: 20
+              Mission: Immobile
+              Immobile:
+                Position3D: [5423, -1078, -5241]
+              Stock:
+                - Name: SpaceDroneLaser
+                  Amount: 24
+                  Extra: 2
+            - Name: BAO_XenuShipyard
+              FixedMaxSpeed: 20
+              Mission: Immobile
+              Immobile:
+                Position3D: [149, -2255, -3927]
+              Stock:
+                - Name: SpaceDroneLaser
+                  Amount: 17
+                  Extra: 2
