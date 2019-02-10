@@ -8,8 +8,8 @@ GenerationParams:
   
   # solar system
   SectorPlanets: 
-    - AridStarter, [2]
-    - TemperateStarter, [2]  
+    - AridStarter, [1]
+    - TemperateStarter, [1]  
     - Snow, [2,3]            # +1 used as neighbor
     - Arid, [2,3]            # needed for resources
     - Desert, [2,3]
@@ -18,7 +18,7 @@ GenerationParams:
     - Lava, [2,3]
     - Alien, [2,3]
   SectorPOIs: 
-    - Sun, [1]               # one sun/star playfield is mandatory    
+    - Sun, [1]               # one sun/star playfield is mandatory
     - AsteroidField, [1,3]
     - SpaceTradingStation, [1,2]
   
@@ -38,7 +38,7 @@ GenerationParams:
         Icon: Circle
         Distance: [100, 300]
         MoonProb: 0.5
-        MoonType: [MoonNascent]   
+        MoonType: [MoonNascent]
         Climate: Lava      # added for description text prior to writing files
         PlayfieldLevel: [6,10]
         Playfields:
@@ -48,7 +48,7 @@ GenerationParams:
         Icon: Circle
         Distance: [120, 400]
         MoonProb: 0.5
-        MoonType: [MoonLava, DefaultMoon]   
+        MoonType: [MoonLava, DefaultMoon]
         Climate: Barren  
         PlayfieldLevel: [5,10]
         Playfields:
@@ -58,8 +58,7 @@ GenerationParams:
         Icon: Circle
         Distance: [175, 350]
         MoonProb: 0.5     
-        MoonType: [MoonLava, DefaultMoon]   
-        # OrbitType: [DefaultOrbit, AsteroidField2]      
+        MoonType: [MoonLava, DefaultMoon]
         Climate: Desert
         PlayfieldLevel: [4,10]
         Playfields:
@@ -69,7 +68,7 @@ GenerationParams:
         Icon: Circle
         Distance: [300, 500]
         MoonProb: 0.5     
-        MoonType: [MoonLava, DefaultMoon]   
+        MoonType: [MoonLava, DefaultMoon]
         Climate: Arid
         PlayfieldLevel: [4,8]
         Playfields:
@@ -81,11 +80,12 @@ GenerationParams:
         PlayerStart: true
         Neighbor: 
           - Snow, 1
-          - SpaceTradingStation, 0.3        
-        OrbitType: [OrbitStarter]         
+          - SpaceTradingStation, 0.3
+        HasOrbit: true    
+        OrbitType: [OrbitStarter]
+        Climate: Arid
         MoonProb: 1
         MoonType: [MoonStarter]       
-        Climate: Arid
         PlayfieldLevel: [1,1]
         Playfields:
             - AridStarter
@@ -127,7 +127,7 @@ GenerationParams:
         Distance: [400, 850]
         MoonProb: 0.85
         # MoonCount: [2,4]
-        MoonType: [MoonLava, MoonIce, DefaultMoon]   
+        MoonType: [MoonLava, MoonIce, DefaultMoon]     
         Climate: Temperate
         PlayfieldLevel: [4,6]
         Playfields:
@@ -138,7 +138,8 @@ GenerationParams:
         Icon: Circle
         Distance: [300, 1000] 
         MoonProb: 0.5   
-        MoonType: [MoonLava, DefaultMoon]              
+        MoonType: [MoonLava, DefaultMoon]
+                  
         Climate: Alien
         PlayfieldLevel: [7,10]
         Playfields:
@@ -148,7 +149,7 @@ GenerationParams:
         Icon: Circle
         Distance: [850, 1200]
         MoonProb: 0.7
-        MoonType: [MoonIce, DefaultMoon]       
+        MoonType: [MoonIce, DefaultMoon]
         Climate: Snow
         OrbitType: [OrbitStarter]          
         PlayfieldLevel: [4,10]
