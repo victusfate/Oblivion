@@ -82,7 +82,7 @@ GenerationParams:
         Neighbor: 
           - Snow, 1
           - SpaceTradingStation, 0.3        
-        OrbitType: [SpaceOrbitStarter]         
+        OrbitType: [OrbitStarter]         
         MoonProb: 1
         MoonType: [MoonStarter]       
         Climate: Arid
@@ -99,7 +99,7 @@ GenerationParams:
         Neighbor: 
           - Snow, 1
           - SpaceTradingStation, 0.3
-        OrbitType: [SpaceOrbitStarter]         
+        OrbitType: [OrbitStarter]         
         MoonProb: 1
         MoonType: [MoonStarter]       
         Climate: Temperate
@@ -114,7 +114,7 @@ GenerationParams:
         # Neighbor: 
           # - Snow, 1
           # - SpaceTradingStation, 0.3
-        # OrbitType: [SpaceOrbitStarter]         
+        # OrbitType: [OrbitStarter]         
         # MoonProb: 1
         # MoonType: [MoonStarter]       
         # Climate: Temperate
@@ -150,7 +150,7 @@ GenerationParams:
         MoonProb: 0.7
         MoonType: [MoonIce, DefaultMoon]       
         Climate: Snow
-        OrbitType: [SpaceOrbitStarter]          
+        OrbitType: [OrbitStarter]          
         PlayfieldLevel: [4,10]
         Playfields:
             - Snow
@@ -238,7 +238,7 @@ GenerationParams:
         PlayfieldLevel: [2,10]
         Playfields:
             - SpaceOrbit
-      - Name: SpaceOrbitStarter
+      - Name: OrbitStarter
         Color: [0.3, 0.3, 0.3]
         Icon: Rhombus
         Distance: [270, 870]

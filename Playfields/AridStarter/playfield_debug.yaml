@@ -915,17 +915,6 @@ AsteroidResources:
 ### POIs
 POIs:
     Random:
-        - GroupName: NullPOI
-          CountMinMax: [ 1, 1 ]
-          DroneProb: 0
-          DronesMinMax: [ 0 ]
-          ReserveCount: 0
-          TroopTransport: False
-          SpawnPOINear: [START]
-          SpawnPOINearDistance: 10
-        #  SpawnResource: ["IronResource:1-2","PromethiumResource:1-1","CopperResource:1-1"]
-        #  SpawnResourceRange: [1000,2000]
-
         - GroupName: JunkT1
           CountMinMax: [ 4, 5 ]
           DroneProb: 0
