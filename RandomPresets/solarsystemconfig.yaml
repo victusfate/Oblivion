@@ -8,7 +8,8 @@ GenerationParams:
   
   # solar system
   SectorPlanets: 
-    - TemperateStarter, [1]  
+    - AridStarter, [2]
+    - TemperateStarter, [2]  
     - Snow, [2,3]            # +1 used as neighbor
     - Arid, [2,3]            # needed for resources
     - Desert, [2,3]
@@ -18,6 +19,7 @@ GenerationParams:
     - Alien, [2,3]
   SectorPOIs: 
     - Sun, [1]               # one sun/star playfield is mandatory
+    - SpaceOrbitStarter, [2]
     - AsteroidField, [1,3]
     - SpaceTradingStation, [1,2]
   
@@ -146,6 +148,7 @@ GenerationParams:
         MoonProb: 0.7
         MoonType: [MoonIce, DefaultMoon]       
         Climate: Snow
+        PlayerStart: true        
         PlayfieldLevel: [4,10]
         Playfields:
             - Snow
@@ -240,6 +243,7 @@ GenerationParams:
         Distance: [270, 870]
         HasOrbit: false
         HasTerrain: false
+        PlayerStart: true
         PlayfieldLevel: [1,1]
         Playfields:
             - SpaceOrbitStarter
