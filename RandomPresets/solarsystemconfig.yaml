@@ -8,7 +8,7 @@ GenerationParams:
   
   # solar system
   SectorPlanets: 
-    - AridStarter, [1]
+    # - AridStarter, [1]
     - TemperateStarter, [1]  
     - Snow, [2,3]            # +1 used as neighbor
     - Arid, [2,3]            # needed for resources
@@ -245,7 +245,7 @@ GenerationParams:
         Distance: [270, 870]
         HasOrbit: false
         HasTerrain: false
-        PlayerStart: true
+        # PlayerStart: true
         PlayfieldLevel: [1,1]
         Playfields:
             - SpaceOrbitStarter
