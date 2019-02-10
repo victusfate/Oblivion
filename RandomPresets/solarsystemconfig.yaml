@@ -79,7 +79,10 @@ GenerationParams:
         Icon: Circle
         Distance: [300, 500]
         PlayerStart: true
-        OrbitType: [SpaceOrbitStarter]         
+        Neighbor: 
+          - Snow, 1
+          - SpaceTradingStation, 0.3        
+        OrbitType: [OrbitStarter]         
         MoonProb: 1
         MoonType: [MoonStarter]       
         Climate: Arid
@@ -96,7 +99,7 @@ GenerationParams:
         Neighbor: 
           - Snow, 1
           - SpaceTradingStation, 0.3
-        OrbitType: [SpaceOrbitStarter]         
+        OrbitType: [OrbitStarter]         
         MoonProb: 1
         MoonType: [MoonStarter]       
         Climate: Temperate
@@ -111,7 +114,7 @@ GenerationParams:
         # Neighbor: 
           # - Snow, 1
           # - SpaceTradingStation, 0.3
-        # OrbitType: [SpaceOrbitStarter]         
+        # OrbitType: [OrbitStarter]         
         # MoonProb: 1
         # MoonType: [MoonStarter]       
         # Climate: Temperate
@@ -147,11 +150,10 @@ GenerationParams:
         MoonProb: 0.7
         MoonType: [MoonIce, DefaultMoon]       
         Climate: Snow
-        PlayerStart: true        
+        OrbitType: [OrbitStarter]          
         PlayfieldLevel: [4,10]
         Playfields:
             - Snow
-
   # ======== Moon Types ================
   MoonTypes:
       - Name: DefaultMoon          # definition of default name 'DefaultMoon' is mandatory
@@ -236,7 +238,7 @@ GenerationParams:
         PlayfieldLevel: [2,10]
         Playfields:
             - SpaceOrbit
-      - Name: SpaceOrbitStarter
+      - Name: OrbitStarter
         Color: [0.3, 0.3, 0.3]
         Icon: Rhombus
         Distance: [270, 870]
