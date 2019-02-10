@@ -24,58 +24,285 @@ Stars: SkyboxStarsRed
 Nebula: PrefabNebulaBluePinkRed
 
 
+### Resource Asteroid
+Resources:                     
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0   
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+ 
+    - Name: [ AsteroidVoxel01Copper, AsteroidVoxel02Copper, AsteroidVoxel03Copper]
+      DisplayName: Copper Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+ 
+    - Name: [ AsteroidVoxel01Silicon, AsteroidVoxel02Silicon, AsteroidVoxel03Silicon]
+      DisplayName: Silicon Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0   
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Magnesium, AsteroidVoxel02Magnesium, AsteroidVoxel03Magnesium]
+      DisplayName: Magnesium Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Cobalt, AsteroidVoxel02Cobalt, AsteroidVoxel03Cobalt]
+      DisplayName: Cobalt Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180            
+
+    - Name: [ AsteroidVoxel01Neodymium, AsteroidVoxel02Neodymium, AsteroidVoxel03Neodymium]
+      DisplayName: Neodymium Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Promethium, AsteroidVoxel02Promethium, AsteroidVoxel03Promethium]
+      DisplayName: Promethium Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Sathium, AsteroidVoxel02Sathium, AsteroidVoxel03Sathium]
+      DisplayName: Sathium Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Erestrum, AsteroidVoxel02Erestrum, AsteroidVoxel03Erestrum]
+      DisplayName: Erestrum Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Zascosium, AsteroidVoxel02Zascosium, AsteroidVoxel03Zascosium]
+      DisplayName: Zascosium Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Pentaxid, AsteroidVoxel02Pentaxid, AsteroidVoxel03Pentaxid]
+      DisplayName: Pentaxid Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Gold, AsteroidVoxel02Gold, AsteroidVoxel03Gold]
+      DisplayName: Gold Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 1.0  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180
+
 ### POIs
 POIs:
-    Fixed:
-        - Type: BA_Alien
-          Prefab: BAO_DerelictMiningShip
-          Mode: Survival
-          Name: BAO_DerelictMiningShip
-          Pos: [ 65, -2000, -7300 ]
-          Rot: [0,0,0]
+    Random:
+      - Type: BA_Alien
+        Faction: Alien
+        Name: [BAO_DerelictMiningShip]
+        DisplayName: BAO_DerelictMiningShip
+        Mode: Survival
+        SubMode: Normal   
+        Pos: [ 65, -2000, -7300 ]
+        CountMinMax: [ 1, 1 ]    
+        Probability: 1
+        InitPower: True
+        Properties:     
+          - Key: RegenAfter
+            Value: 720   
+      
+      - Type: BA_Player    
+        Faction: Alien   
+        Name: [BAO_Ramparts]
+        DisplayName: Outpost Akua Orbit  
+        Mode: Survival            
+        SubMode: Normal      
+        CountMinMax: [ 1, 1 ]        
+        Pos: [ 65, -2000, -6800 ]    
+        Rot: [ 0, 75, 0 ]      
+        Probability: 1
+        InitPower: True
+        Properties:     
+          - Key: RegenAfter
+            Value: 720
 
-        - Type: BA_Admin
-          Prefab: TSO_OscutuneOrbit
-          Mode: Survival
-          Name: TSO Trading Outpost
-          Pos: [3517, -637, 1077]
-          Rot: [0, 0, 0]
+      - Type: BA_Player    
+        Faction: Public   
+        Name: [BAO_Ramparts]
+        DisplayName: Outpost Akua Orbit  
+        Mode: Survival            
+        SubMode: Normal      
+        CountMinMax: [ 1, 1 ]        
+        Pos: [ 65, -2000, -6800 ]    
+        Rot: [ 0, 75, 0 ]      
+        Probability: 1
+        InitPower: True
+        Properties:     
+          - Key: RegenAfter
+            Value: 720
 
-        - Type: AsteroidVoxel02Silicon
-          Prefab: AsteroidVoxel02Silicon
-          Name: Silicon Asteroid
-          Pos: [2852, 197, 4662]
-          Rot: [0, 0, 0]
+      - Type: BA_Player    
+        Faction: Public        
+        Name: [BA_EmptyPlane]
+        DisplayName: Platform  
+        Mode: Survival            
+        SubMode: Empty      
+        CountMinMax: [ 1, 1 ]      
+        Pos: [ 65, -2000, -6800 ]    
+        Rot: [ 0, 75, 0 ]      
+        Probability: 1
+        InitPower: True
+        Properties:     
+          - Key: RegenAfter
+            Value: 720
 
-        - Type: AsteroidVoxel01Silicon
-          Prefab: AsteroidVoxel01Silicon
-          Name: Silicon Asteroid
-          Pos: [-3468, 548, 2444]
-          Rot: [0, 0, 0]
+      - Type: SV_Player    
+        Faction: Public   
+        Name: [SV_Viper]
+        DisplayName: Fighter MKII  
+        Mode: Survival            
+        SubMode: Normal      
+        CountMinMax: [ 1, 1 ]      
+        Pos: [ 56.6, -1962.3, -6805.5 ]    
+        Rot: [ 0, -115, 0 ]      
+        Probability: 1
+        InitPower: False
 
-        - Type: AsteroidVoxel02Silicon
-          Prefab: AsteroidVoxel02Silicon
-          Name: Silicon Asteroid
-          Pos: [-191, -128, -4555]
-          Rot: [0, 0, 0]
+      - Type: SV_Player    
+        Faction: Public   
+        Name: [SV_Viper]
+        DisplayName: Fighter MKII  
+        Mode: Survival            
+        SubMode: Empty      
+        CountMinMax: [ 1, 1 ]      
+        Pos: [ 69, -1998.3, -6799 ]    
+        Rot: [ 0, -69, 0 ]      
+        Probability: 1
+        InitPower: False
 
-        - Type: AsteroidVoxel02Magnesium
-          Prefab: AsteroidVoxel02Magnesium
-          Name: Magnesium Asteroid
-          Pos: [322, 337, 4218]
-          Rot: [0, 0, 0]
+      - Type: BA_Admin
+        Name: [TSO_Variant1, TSO_Variant2, TSO_Variant3, TSO_Variant4, TSO_Variant5, TSO_Variant6, TSO_Variant7]  
+        DisplayName: Trading Station
+        Mode: Survival
+        CountMinMax: [ 1, 1 ]     
+        Probability: 1
+        InitPower: True
+        Position:
+          PosXZMinMax: [2000, 5000]
+          PosYMax: 2000
+        Properties: 
+          - Key: Music
+            Value: NebularClouds  
 
-        - Type: AsteroidVoxel02Erestrum
-          Prefab: AsteroidVoxel02Erestrum
-          Name: Erestrum Asteroid
-          Pos: [-4367, -414, 2754]
-          Rot: [0, 0, 0]
+      
+      - Type: BA_Alien   
+        Name: [BAO_DestroyedOrbitalDefence]
+        DisplayName: Destroyed Orbital Defence
+        Mode: Survival
+        CountMinMax: [ 1, 1 ]    
+        Probability: 1
+        InitPower: True
+        Compound:
+          CountMinMax: [8, 10]
+          Probability: 1
+          Name: [BAO_DestroyedOrbitalDefence, CV_Destroyed1, CV_Destroyed2, CV_Destroyed3, CV_Destroyed4, CV_DestroyedFront, CV_DestroyedRear, BA_CrashedCV_2, BA_CrashedCV_3]
+          DistanceMinMax: [100, 400] 
+          Rotate: true
+        Properties:     
+          - Key: RegenAfter
+            Value: 720  
 
-        - Type: AsteroidVoxel02Erestrum
-          Prefab: AsteroidVoxel02Erestrum
-          Name: Erestrum Asteroid
-          Pos: [4459, 305, -1527]
-          Rot: [0, 0, 0]
+  # Definition for elements in Compound        
+      - Type: CV_Alien   
+        Name: [CV_Destroyed1, CV_Destroyed2, CV_Destroyed3, CV_Destroyed4, CV_DestroyedFront, CV_DestroyedRear, BA_CrashedCV_2, BA_CrashedCV_3]
+        DisplayName: Destroyed Vessel
+        Mode: Survival
+        CountMinMax: [ 1, 1 ]  
+        Probability: 0.6
+        IsCompoundSubDesc: True   
+        InitPower: True
+        Properties:     
+          - Key: RegenAfter
+            Value: 720
+
+    # Fixed:
+    #     - Type: BA_Alien
+    #       Prefab: BAO_DerelictMiningShip
+    #       Mode: Survival
+    #       Name: BAO_DerelictMiningShip
+    #       Pos: [ 65, -2000, -7300 ]
+    #       Rot: [0,0,0]
+
+    #     - Type: BA_Admin
+    #       Prefab: TSO_OscutuneOrbit
+    #       Mode: Survival
+    #       Name: TSO Trading Outpost
+    #       Pos: [3517, -637, 1077]
+    #       Rot: [0, 0, 0]
+
+    #     - Type: AsteroidVoxel02Silicon
+    #       Prefab: AsteroidVoxel02Silicon
+    #       Name: Silicon Asteroid
+    #       Pos: [2852, 197, 4662]
+    #       Rot: [0, 0, 0]
+
+    #     - Type: AsteroidVoxel01Silicon
+    #       Prefab: AsteroidVoxel01Silicon
+    #       Name: Silicon Asteroid
+    #       Pos: [-3468, 548, 2444]
+    #       Rot: [0, 0, 0]
+
+    #     - Type: AsteroidVoxel02Silicon
+    #       Prefab: AsteroidVoxel02Silicon
+    #       Name: Silicon Asteroid
+    #       Pos: [-191, -128, -4555]
+    #       Rot: [0, 0, 0]
+
+    #     - Type: AsteroidVoxel02Magnesium
+    #       Prefab: AsteroidVoxel02Magnesium
+    #       Name: Magnesium Asteroid
+    #       Pos: [322, 337, 4218]
+    #       Rot: [0, 0, 0]
+
+    #     - Type: AsteroidVoxel02Erestrum
+    #       Prefab: AsteroidVoxel02Erestrum
+    #       Name: Erestrum Asteroid
+    #       Pos: [-4367, -414, 2754]
+    #       Rot: [0, 0, 0]
+
+    #     - Type: AsteroidVoxel02Erestrum
+    #       Prefab: AsteroidVoxel02Erestrum
+    #       Name: Erestrum Asteroid
+    #       Pos: [4459, 305, -1527]
+    #       Rot: [0, 0, 0]
 
 
     FixedPlayerStart:

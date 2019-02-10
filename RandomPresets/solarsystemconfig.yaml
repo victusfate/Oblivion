@@ -18,8 +18,7 @@ GenerationParams:
     - Lava, [2,3]
     - Alien, [2,3]
   SectorPOIs: 
-    - Sun, [1]               # one sun/star playfield is mandatory
-    - SpaceOrbitStarter, [2]
+    - Sun, [1]               # one sun/star playfield is mandatory    
     - AsteroidField, [1,3]
     - SpaceTradingStation, [1,2]
   
@@ -80,7 +79,7 @@ GenerationParams:
         Icon: Circle
         Distance: [300, 500]
         PlayerStart: true
-        OrbitType: [OrbitStarter]         
+        OrbitType: [SpaceOrbitStarter]         
         MoonProb: 1
         MoonType: [MoonStarter]       
         Climate: Arid
@@ -97,7 +96,7 @@ GenerationParams:
         Neighbor: 
           - Snow, 1
           - SpaceTradingStation, 0.3
-        OrbitType: [OrbitStarter]         
+        OrbitType: [SpaceOrbitStarter]         
         MoonProb: 1
         MoonType: [MoonStarter]       
         Climate: Temperate
@@ -112,7 +111,7 @@ GenerationParams:
         # Neighbor: 
           # - Snow, 1
           # - SpaceTradingStation, 0.3
-        # OrbitType: [OrbitStarter]         
+        # OrbitType: [SpaceOrbitStarter]         
         # MoonProb: 1
         # MoonType: [MoonStarter]       
         # Climate: Temperate
@@ -237,7 +236,7 @@ GenerationParams:
         PlayfieldLevel: [2,10]
         Playfields:
             - SpaceOrbit
-      - Name: OrbitStarter
+      - Name: SpaceOrbitStarter
         Color: [0.3, 0.3, 0.3]
         Icon: Rhombus
         Distance: [270, 870]
