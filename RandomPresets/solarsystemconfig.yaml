@@ -8,7 +8,7 @@ GenerationParams:
   
   # solar system
   SectorPlanets: 
-    # - AridStarter, [1]
+    - AridStarter, [1]
     - TemperateStarter, [1]  
     - Snow, [2,3]            # +1 used as neighbor
     - Arid, [2,3]            # needed for resources
@@ -20,8 +20,9 @@ GenerationParams:
   SectorPOIs: 
     - Sun, [1]               # one sun/star playfield is mandatory
     - AsteroidField, [1,3]
-    - AsteroidFieldStarter, [1]
+    # - AsteroidFieldStarter, [1]
     - SpaceTradingStation, [1,2]
+    - ExampleSpace, [1]
   
   StarTypes:
       - Name: Sun
@@ -216,16 +217,16 @@ GenerationParams:
         PlayfieldLevel: [2,10]
         Playfields:
             - SpaceAsteroidField
-      - Name: AsteroidFieldStarter
-        Color: [0.3, 0.3, 0.3]
-        Icon: Rhombus
-        Distance: [270, 870]
-        HasOrbit: false
-        HasTerrain: false
-        PlayerStart: true
-        PlayfieldLevel: [1,1]
-        Playfields:
-            - SpaceAsteroidFieldStarter          
+      # - Name: AsteroidFieldStarter
+      #   Color: [0.3, 0.3, 0.3]
+      #   Icon: Rhombus
+      #   Distance: [270, 870]
+      #   HasOrbit: false
+      #   HasTerrain: false
+      #   PlayerStart: true
+      #   PlayfieldLevel: [1,1]
+      #   Playfields:
+      #       - SpaceAsteroidFieldStarter        
   # ======== Stations ================            
   StationTypes:
       - Name: SpaceTradingStation
@@ -234,10 +235,11 @@ GenerationParams:
         Distance: [200, 1200]
         HasOrbit: false
         HasTerrain: false
+        # PlayerStart: true        
         PlayfieldLevel: [2,10]
         Playfields:
             - SpaceTradingStation
-            
+          
   # ======== OrbitTypes ================
   OrbitTypes:
       - Name: DefaultOrbit     # definition of default name 'DefaultOrbit' is mandatory
