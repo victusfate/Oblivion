@@ -20,6 +20,7 @@ GenerationParams:
   SectorPOIs: 
     - Sun, [1]               # one sun/star playfield is mandatory
     - AsteroidField, [1,3]
+    - AsteroidFieldStarter, [1]
     - SpaceTradingStation, [1,2]
   
   StarTypes:
@@ -215,7 +216,16 @@ GenerationParams:
         PlayfieldLevel: [2,10]
         Playfields:
             - SpaceAsteroidField
-            
+      - Name: AsteroidFieldStarter
+        Color: [0.3, 0.3, 0.3]
+        Icon: Rhombus
+        Distance: [270, 870]
+        HasOrbit: false
+        HasTerrain: false
+        PlayerStart: true
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - SpaceAsteroidFieldStarter          
   # ======== Stations ================            
   StationTypes:
       - Name: SpaceTradingStation
@@ -245,7 +255,7 @@ GenerationParams:
         Distance: [270, 870]
         HasOrbit: false
         HasTerrain: false
-        # PlayerStart: true
+        # PlayerStart: true # not yet supported
         PlayfieldLevel: [1,1]
         Playfields:
             - SpaceOrbitStarter
