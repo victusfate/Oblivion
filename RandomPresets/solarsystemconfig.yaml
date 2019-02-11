@@ -22,7 +22,6 @@ GenerationParams:
     - AsteroidField, [1,3]
     # - AsteroidFieldStarter, [1]
     - SpaceTradingStation, [1,2]
-    - ExampleSpace, [1]
   
   StarTypes:
       - Name: Sun
